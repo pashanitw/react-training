@@ -28,12 +28,16 @@ const TodoContainer = () => {
     return <div style={{backgroundColor: 'blue', display:'flex', flexDirection:'column', alignItems: 'start', padding: 10, height:  300, position:'relative'}}>
         {
             todoList.map(item => {
-                return <div>
-                    <p>{item.text}</p>
-                </div>
+                return <TodoListItem text={item.text}/>
             })
         }
         <button style={{position:'absolute', bottom: 0, right:0}}>add</button>
+    </div>
+}
+
+const TodoListItem = ({text}) => {
+    return <div>
+        <p>{text}</p>
     </div>
 }
 
